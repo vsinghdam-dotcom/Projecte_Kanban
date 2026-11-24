@@ -23,7 +23,6 @@ namespace Projecte_Kanban
         public MainWindow()
         {
             InitializeComponent();
-            Console.WriteLine("Hola");
         }
     }
 }
