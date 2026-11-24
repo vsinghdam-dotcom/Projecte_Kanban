@@ -6,45 +6,40 @@
         xmlns:local="clr-namespace:Projecte_Kanban"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0">
-                    <Label Content="To Do" HorizontalAlignment="Center" FontSize="15"></Label>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
-        <StackPanel Grid.Column="1">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0">
-                    <Label Content="In Progres" HorizontalAlignment="Center" FontSize="15"></Label>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0">
-                    <Label Content="Done" HorizontalAlignment="Center" FontSize="15"></Label>
-                </StackPanel>
-            </Grid>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <!-- Column 0: To Do -->
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Gray" BorderThickness="0,0,1,1">
+            <Label Content="To Do" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Gray" BorderThickness="0,0,1,0">
+            <StackPanel x:Name="ToDoPanel" Margin="5" />
+        </Border>
+
+        <!-- Column 1: In Progress -->
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Gray" BorderThickness="0,0,1,1">
+            <Label Content="In Progress" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Gray" BorderThickness="0,0,1,0">
+            <StackPanel x:Name="InProgressPanel" Margin="5" />
+        </Border>
+
+        <!-- Column 2: Done -->
+        <Border Grid.Row="0" Grid.Column="2" BorderBrush="Gray" BorderThickness="0,0,0,1">
+            <Label Content="Done" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2">
+            <StackPanel x:Name="DonePanel" Margin="5" />
+        </Border>
     </Grid>
-</Window>
+</Window> 
